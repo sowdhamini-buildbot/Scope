@@ -1,7 +1,4 @@
 // Scope in JS, determines the accessibility of variables and functions at various parts in one’s code.
-
-// In general terms, the scope will let us know at a given part of code, what are the variables and functions that we can or cannot access.
-
 // There are three types of scopes in JS:
 
 // Global Scope
@@ -15,11 +12,9 @@ var globalVariable = "Hello world";
 function sendMessage(){
   return globalVariable; // can access globalVariable since it's written in global space
 }
-
 function sendMessage2(){
   return sendMessage(); // Can access sendMessage function since it's written in global space
 }
-
 sendMessage2();  // Returns “Hello world”
 
 
@@ -38,11 +33,10 @@ function awesomeFunction(){
   
 
 // Block Scope: Block scope is related to the variables declared using let and const. Variables declared with var do not have block scope.Block scope tells us that any variable declared inside a block { }, can be accessed only inside that block and cannot be accessed outside of it.
-{
+  {
     let x = 45;
   }
-  
-  console.log(x); // Gives reference error since x cannot be accessed outside of the block
+   console.log(x); // Gives reference error since x cannot be accessed outside of the block
   
   for(let i=0; i<2; i++){
     // do something
@@ -68,8 +62,6 @@ function awesomeFunction(){
     anotherFavFunction();
     yetAnotherFavFunction();
   }
-  
-  
   favFunction();
 
 // As you can see in the code above, if the javascript engine does not find the variable in local scope, it tries to check for the variable in the outer scope. If the variable does not exist in the outer scope, it tries to find the variable in the global scope.
